@@ -1,4 +1,6 @@
 pluginManagement {
+    includeBuild("platform/build-logic")
+
     repositories {
         google {
             content {
@@ -7,12 +9,16 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+
         mavenCentral()
+
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
     repositories {
         google()
         mavenCentral()
@@ -20,5 +26,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Skeleton"
+
 include(":app")
- 
+include(":features:home:master")
