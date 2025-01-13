@@ -6,5 +6,6 @@ internal enum class PlatformPlugin(val value: String) {
     DaggerHilt(value = "dagger.hilt.android.plugin"),
     KotlinAndroid(value = "org.jetbrains.kotlin.android"),
     KotlinCompose(value = "org.jetbrains.kotlin.plugin.compose"),
+    KotlinSerialization(value = "org.jetbrains.kotlin.plugin.serialization"),
     Ksp(value = "com.google.devtools.ksp"),
 }

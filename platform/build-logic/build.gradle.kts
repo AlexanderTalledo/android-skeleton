@@ -16,14 +16,19 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("plugin-application") {
+        register("library-application") {
             id = "dev.alexta.apps.plugins.application"
             implementationClass = "dev.alexta.apps.platform.build_logic.plugins.ApplicationConventionPlugin"
         }
 
-        register("plugin-feature") {
-            id = "dev.alexta.apps.plugins.feature"
-            implementationClass = "dev.alexta.apps.platform.build_logic.plugins.FeatureConventionPlugin"
+        register("library-android") {
+            id = "dev.alexta.apps.plugins.libraries.android"
+            implementationClass = "dev.alexta.apps.platform.build_logic.plugins.AndroidLibraryConventionPlugin"
+        }
+
+        register("library-feature") {
+            id = "dev.alexta.apps.plugins.libraries.feature"
+            implementationClass = "dev.alexta.apps.platform.build_logic.plugins.FeatureLibraryConventionPlugin"
         }
     }
 }

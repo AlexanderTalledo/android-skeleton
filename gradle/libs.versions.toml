@@ -1,24 +1,27 @@
 [versions]
-activityCompose = "1.9.3"
 agpVersion = "8.8.0"
+composeActivityVersion = "1.9.3"
 composeBomVersion = "2024.12.01"
+composeNavigationVersion = "2.8.5"
 coreKtx = "1.15.0"
 daggerHiltVersion = "2.55"
 espressoCore = "3.6.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlinVersion = "2.1.0"
+kotlinxSerializationVersion = "1.8.0"
 kspVersion = "2.1.0-1.0.29"
 lifecycleRuntimeKtx = "2.8.7"
-jetbrainsKotlinJvm = "2.1.0"
+moleculeVersion = "2.0.0"
 
 [libraries]
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivityVersion" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBomVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigationVersion" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -31,20 +34,24 @@ dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", ve
 gradle-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agpVersion" }
 gradle-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
+molecule = { module = "app.cash.molecule:molecule-runtime", version.ref = "moleculeVersion" }
 
 [bundles]
 android-application-implementation = [
     "androidx-lifecycle-runtime-ktx",
     "dagger-hilt-android",
+    "kotlinx-serialization-json",
 ]
 android-application-ksp = [
     "dagger-hilt-compiler",
 ]
-android-library-implementation = [
+feature-library-implementation = [
     "androidx-lifecycle-runtime-ktx",
     "dagger-hilt-android",
+    "molecule"
 ]
-android-library-ksp = [
+feature-library-ksp = [
     "dagger-hilt-compiler",
 ]
 
@@ -53,5 +60,5 @@ android-application = { id = "com.android.application", version.ref = "agpVersio
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltVersion" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinVersion" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }

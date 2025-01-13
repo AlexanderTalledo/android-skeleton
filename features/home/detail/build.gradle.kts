@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = "dev.alexta.apps.features.home.master"
+    namespace = "dev.alexta.apps.features.home.detail"
 }

@@ -4,16 +4,24 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
+import dev.alexta.apps.features.home.detail.ui.HomeDetailScreen
+import dev.alexta.apps.features.master.ui.HomeMasterScreen
 import dev.alexta.apps.skeleton.ui.theme.SkeletonTheme
+import kotlinx.serialization.Serializable
+import javax.inject.Inject
 
+@AndroidEntryPoint
 internal class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var homeMasterScreen: HomeMasterScreen
+
+    @Inject
+    lateinit var homeDetailScreen: HomeDetailScreen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,29 +30,24 @@ internal class MainActivity : ComponentActivity() {
 
         setContent {
             SkeletonTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                val navController = rememberNavController()
+
+                NavHost(
+                    navController = navController,
+                    startDestination = HomeMasterDestination
+                ) {
+                    composable<HomeMasterDestination> {
+                        homeMasterScreen.Display()
+                    }
+
+                    composable("HomeDetail") {
+                        homeDetailScreen.Display()
+                    }
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SkeletonTheme {
-        Greeting("Android")
-    }
-}
+@Serializable
+object HomeMasterDestination

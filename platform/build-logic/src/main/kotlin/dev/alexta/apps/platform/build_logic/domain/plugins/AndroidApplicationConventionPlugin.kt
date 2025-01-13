@@ -15,6 +15,7 @@ internal abstract class AndroidApplicationConventionPlugin : ConventionPlugin() 
         applyPlugin(PlatformPlugin.DaggerHilt)
         applyPlugin(PlatformPlugin.KotlinAndroid)
         applyPlugin(PlatformPlugin.KotlinCompose)
+        applyPlugin(PlatformPlugin.KotlinSerialization)
         applyPlugin(PlatformPlugin.Ksp)
 
         configureAndroidApplication()
@@ -58,6 +59,10 @@ internal abstract class AndroidApplicationConventionPlugin : ConventionPlugin() 
 
                 buildFeatures {
                     compose = USES_COMPOSE
+                }
+
+                composeOptions {
+                    kotlinCompilerExtensionVersion = "1.5.15"
                 }
             }
 

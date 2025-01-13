@@ -4,6 +4,7 @@ import dev.alexta.apps.platform.build_logic.domain.platform.config.PlatformAndro
 import dev.alexta.apps.platform.build_logic.domain.platform.config.PlatformVersionCatalogsConfig
 import dev.alexta.apps.platform.build_logic.domain.platform.dependencies.PlatformDependencyBundle
 import dev.alexta.apps.platform.build_logic.domain.platform.dependencies.PlatformDependencyConfigurationName
+import dev.alexta.apps.platform.build_logic.domain.platform.dependencies.PlatformDependencyModule
 import dev.alexta.apps.platform.build_logic.domain.platform.plugins.PlatformPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -28,6 +29,13 @@ internal abstract class ConventionPlugin : Plugin<Project> {
             .also { versionCatalogsBundle ->
                 addDependency(configurationName, versionCatalogsBundle)
             }
+    }
+
+    protected fun Project.addModuleDependency(
+        module: PlatformDependencyModule,
+        configurationName: PlatformDependencyConfigurationName,
+    ) {
+        addDependency(configurationName, project(module.value))
     }
 
     protected fun Project.configureKotlinOptions() {

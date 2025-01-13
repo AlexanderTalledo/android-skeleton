@@ -28,4 +28,6 @@ dependencyResolutionManagement {
 rootProject.name = "Skeleton"
 
 include(":app")
+include(":features:home:detail")
 include(":features:home:master")
+include(":shared:ui")
