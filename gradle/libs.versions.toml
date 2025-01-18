@@ -11,7 +11,7 @@ junitVersion = "1.2.1"
 kotlinVersion = "2.1.0"
 kotlinxSerializationVersion = "1.8.0"
 kspVersion = "2.1.0-1.0.29"
-lifecycleRuntimeKtx = "2.8.7"
+lifecycleVersion = "2.8.7"
 moleculeVersion = "2.0.0"
 
 [libraries]
@@ -20,7 +20,9 @@ androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", versi
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleVersion" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleVersion" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigationVersion" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -47,7 +49,9 @@ android-application-ksp = [
     "dagger-hilt-compiler",
 ]
 feature-library-implementation = [
+    "androidx-lifecycle-runtime-compose",
     "androidx-lifecycle-runtime-ktx",
+    "androidx-lifecycle-viewmodel-compose",
     "dagger-hilt-android",
     "molecule"
 ]

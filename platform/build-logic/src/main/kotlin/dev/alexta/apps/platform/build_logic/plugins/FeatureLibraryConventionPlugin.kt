@@ -13,6 +13,7 @@ internal class FeatureLibraryConventionPlugin : LibraryConventionPlugin() {
         applyPlugin(PlatformPlugin.AndroidLibrary)
         applyPlugin(PlatformPlugin.DaggerHilt)
         applyPlugin(PlatformPlugin.KotlinAndroid)
+        applyPlugin(PlatformPlugin.KotlinCompose)
         applyPlugin(PlatformPlugin.Ksp)
 
         configureAndroidEnvironment()
