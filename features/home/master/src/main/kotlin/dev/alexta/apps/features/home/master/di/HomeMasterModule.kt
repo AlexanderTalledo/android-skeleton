@@ -1,4 +1,4 @@
-package dev.alexta.apps.features.master.di
+package dev.alexta.apps.features.home.master.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

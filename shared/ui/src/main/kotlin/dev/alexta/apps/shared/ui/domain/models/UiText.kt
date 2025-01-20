@@ -11,7 +11,7 @@ sealed class UiText {
     internal abstract fun asString(): String
 
     @Stable
-    class DynamicString(private val value: String) : UiText() {
+    class Dynamic(private val value: String) : UiText() {
 
         @Composable
         override fun asString(): String = value
@@ -19,7 +19,7 @@ sealed class UiText {
     }
 
     @Stable
-    class ResourceString(
+    class Resource(
         @StringRes private val resId: Int,
         private vararg val args: Any = emptyArray(),
     ) : UiText() {

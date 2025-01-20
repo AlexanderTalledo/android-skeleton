@@ -1,4 +1,4 @@
-package dev.alexta.apps.features.master.presentation
+package dev.alexta.apps.features.home.master.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState

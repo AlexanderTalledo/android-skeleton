@@ -10,7 +10,7 @@ import javax.inject.Inject
 internal class HomeDetailViewModel @Inject constructor() : ViewModel() {
 
     internal val stateFlow: StateFlow<HomeDetailState> = viewModelScope.launchMolecule(
-        mode = RecompositionMode.ContextClock,
+        mode = RecompositionMode.Immediate,
     ) {
         HomeDetailState
     }

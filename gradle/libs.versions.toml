@@ -13,6 +13,7 @@ kotlinxSerializationVersion = "1.8.0"
 kspVersion = "2.1.0-1.0.29"
 lifecycleVersion = "2.8.7"
 moleculeVersion = "2.0.0"
+jetbrainsKotlinJvmVersion = "1.9.24"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivityVersion" }
@@ -66,3 +67,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVer
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinVersion" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvmVersion" }

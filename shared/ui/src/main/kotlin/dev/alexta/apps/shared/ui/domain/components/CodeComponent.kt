@@ -29,12 +29,12 @@ import androidx.compose.ui.unit.dp
 import dev.alexta.apps.shared.ui.domain.models.UiText
 import dev.alexta.apps.shared.ui.domain.theme.ThemePaddings
 
-internal sealed interface TextComponent : Component {
+internal sealed interface CodeComponent : Component {
 
     data class Otp(
         private val codeText: UiText,
         private val modifier: Modifier = Modifier,
-    ) : TextComponent {
+    ) : CodeComponent {
 
         @[Composable OptIn(ExperimentalAnimationApi::class)]
         override fun Render() {

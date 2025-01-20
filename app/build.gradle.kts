@@ -13,8 +13,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation(project(":features:home:detail"))
-    implementation(project(":features:home:master"))
+    implementation(project(":navigation"))
     implementation(project(":shared:ui"))
 
     testImplementation(libs.junit)

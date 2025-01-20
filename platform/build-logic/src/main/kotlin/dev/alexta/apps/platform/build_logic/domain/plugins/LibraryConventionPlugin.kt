@@ -11,6 +11,10 @@ internal abstract class LibraryConventionPlugin : ConventionPlugin() {
         extensions.configure<LibraryExtension> {
             compileSdk = PlatformAndroidConfig.COMPILE_SDK
 
+            defaultConfig {
+                minSdk = PlatformAndroidConfig.MIN_SDK
+            }
+
             compileOptions {
                 sourceCompatibility = PlatformAndroidConfig.CompileJavaVersion
                 targetCompatibility = PlatformAndroidConfig.CompileJavaVersion
