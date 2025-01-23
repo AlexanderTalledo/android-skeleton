@@ -5,11 +5,11 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.alexta.apps.features.home.detail.presentation.HomeDetailViewModel
-import dev.alexta.apps.shared.ui.domain.screens.ScreenRenderer
+import dev.alexta.apps.shared.ui.domain.renders.Renderable
 
 class HomeDetailScreenRenderer(
     private val onNavigateIconClicked: () -> Unit,
-) : ScreenRenderer {
+) : Renderable {
 
     @Composable
     override fun Render() = with(viewModel<HomeDetailViewModel>()) {
@@ -18,7 +18,7 @@ class HomeDetailScreenRenderer(
         HomeDetailScreen(
             state = state,
             onNavigateIconClicked = onNavigateIconClicked,
-        ).Display()
+        ).Render()
     }
 
 }

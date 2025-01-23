@@ -22,14 +22,14 @@ abstract class ScaffoldScreen : Screen {
     protected abstract val bodyContents: List<BodyContent>
 
     @Composable
-    override fun Display() {
+    override fun Render() {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
             topBar = {
-                topBar?.Show()
+                topBar?.Render()
             },
             bottomBar = {
-                bottomBar?.Show()
+                bottomBar?.Render()
             },
         ) { innerPaddingValues ->
             LazyColumn(
@@ -39,7 +39,7 @@ abstract class ScaffoldScreen : Screen {
                 contentPadding = innerPaddingValues,
             ) {
                 items(bodyContents) { bodyContent ->
-                    bodyContent.Show()
+                    bodyContent.Render()
                 }
             }
         }

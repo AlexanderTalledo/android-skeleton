@@ -7,10 +7,10 @@ import dev.alexta.apps.shared.ui.domain.models.UiText
 
 data class TotpContent(
     private val otpCodeText: UiText,
-) : BodyContent() {
+) : BodyContent {
 
     @Composable
-    override fun Show() {
+    override fun Render() {
         CodeComponent.Otp(
             codeText = otpCodeText,
         ).Render()

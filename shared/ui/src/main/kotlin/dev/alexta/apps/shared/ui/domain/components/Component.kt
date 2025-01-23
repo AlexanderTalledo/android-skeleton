@@ -1,10 +1,5 @@
 package dev.alexta.apps.shared.ui.domain.components
 
-import androidx.compose.runtime.Composable
+import dev.alexta.apps.shared.ui.domain.renders.Renderable
 
-internal interface Component {
-
-    @Composable
-    fun Render()
-
-}
+internal interface Component : Renderable

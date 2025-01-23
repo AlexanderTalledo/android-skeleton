@@ -1,10 +1,5 @@
 package dev.alexta.apps.shared.ui.domain.contents
 
-import androidx.compose.runtime.Composable
+import dev.alexta.apps.shared.ui.domain.renders.Renderable
 
-abstract class Content {
-
-    @Composable
-    internal abstract fun Show()
-
-}
+interface Content : Renderable

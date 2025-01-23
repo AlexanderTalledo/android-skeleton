@@ -1,10 +1,5 @@
 package dev.alexta.apps.shared.ui.domain.screens
 
-import androidx.compose.runtime.Composable
+import dev.alexta.apps.shared.ui.domain.renders.Renderable
 
-interface Screen {
-
-    @Composable
-    fun Display()
-
-}
+interface Screen : Renderable

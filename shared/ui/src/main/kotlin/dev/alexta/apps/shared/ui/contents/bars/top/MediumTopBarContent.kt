@@ -12,10 +12,10 @@ data class MediumTopBarContent(
     private val titleText: UiText,
     private val navigationIcon: UiIcon? = null,
     private val onNavigationIconClick: () -> Unit = {},
-) : TopBarContent() {
+) : TopBarContent {
 
     @Composable
-    override fun Show() {
+    override fun Render() {
         TopBarComponent.Medium(
             title = TextComponent.TopBarTitle(
                 text = titleText,
