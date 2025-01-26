@@ -26,6 +26,11 @@ gradlePlugin {
             implementationClass = "dev.alexta.apps.platform.build_logic.plugins.AndroidLibraryConventionPlugin"
         }
 
+        register("library-business") {
+            id = "dev.alexta.apps.plugins.libraries.business"
+            implementationClass = "dev.alexta.apps.platform.build_logic.plugins.BusinessLibraryConventionPlugin"
+        }
+
         register("library-feature") {
             id = "dev.alexta.apps.plugins.libraries.feature"
             implementationClass = "dev.alexta.apps.platform.build_logic.plugins.FeatureLibraryConventionPlugin"
