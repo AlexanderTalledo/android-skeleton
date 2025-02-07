@@ -2,13 +2,19 @@ package dev.alexta.apps.business.shared.infrastructure.persistence.room.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import dev.alexta.apps.business.shared.infrastructure.persistence.room.users.UsersDao
+import dev.alexta.apps.business.shared.infrastructure.persistence.room.users.UserEntity
 
 @Database(
-    entities = [],
+    entities = [
+        UserEntity::class,
+    ],
     exportSchema = true,
     version = SkeletonDatabase.VERSION,
 )
 internal abstract class SkeletonDatabase : RoomDatabase() {
+
+    internal abstract fun usersDao(): UsersDao
 
     internal companion object {
 

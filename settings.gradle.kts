@@ -29,7 +29,9 @@ rootProject.name = "Skeleton"
 
 include(":app")
 include(":business:shared")
+include(":business:users")
 include(":features:home:detail")
 include(":features:home:master")
-include(":shared:ui")
 include(":navigation")
+include(":shared:infrastructure")
+include(":shared:ui")

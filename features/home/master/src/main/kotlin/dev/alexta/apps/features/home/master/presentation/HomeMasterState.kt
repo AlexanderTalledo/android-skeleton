@@ -5,8 +5,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import kotlinx.coroutines.flow.Flow
 
-internal data class HomeMasterState(
-    internal val optCode: String,
+internal class HomeMasterState private constructor(
+    val optCode: String,
 ) {
 
     internal companion object {

@@ -32,6 +32,11 @@ internal class BusinessLibraryConventionPlugin : LibraryConventionPlugin() {
             module = PlatformDependencyModule.BusinessShared,
             configurationName = PlatformDependencyConfigurationName.Implementation,
         )
+
+        addModuleDependency(
+            module = PlatformDependencyModule.SharedInfrastructure,
+            configurationName = PlatformDependencyConfigurationName.Implementation,
+        )
     }
 
 }

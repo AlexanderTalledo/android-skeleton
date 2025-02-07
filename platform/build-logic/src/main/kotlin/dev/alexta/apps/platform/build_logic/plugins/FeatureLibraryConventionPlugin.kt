@@ -30,6 +30,11 @@ internal class FeatureLibraryConventionPlugin : LibraryConventionPlugin() {
         )
 
         addModuleDependency(
+            module = PlatformDependencyModule.SharedInfrastructure,
+            configurationName = PlatformDependencyConfigurationName.Implementation,
+        )
+
+        addModuleDependency(
             module = PlatformDependencyModule.SharedUi,
             configurationName = PlatformDependencyConfigurationName.Implementation,
         )
